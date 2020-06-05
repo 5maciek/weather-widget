@@ -1,0 +1,303 @@
+/***************** GLOBAL *****************/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+div.container {
+  width: 800px;
+  height: 462px;
+  margin: 50px 50px;  
+  display: flex;  
+}
+
+/***************** ROWS TITLE *****************/
+section.rows__title {
+  width: 70px;
+  box-shadow: 5px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 9999999;
+}
+
+.rows__title__list {
+  width: 70px;
+}
+
+.rows__title_item {
+  border-bottom: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.rows__title_item:last-child {
+  border: none;
+}
+
+.rows__title_item > span {
+  color: #888;
+  font-size: 10px;
+}
+
+.rows__title_item.day {
+  height: 15px;
+}
+
+.rows__title_item.hour {
+  height: 30px;
+}
+
+.rows__title_item.forecast {
+  height: 35px;
+}
+
+.rows__title_item.temperature {
+  height: 110px;
+}
+
+.rows__title_item.rainfall {
+  height: 60px;
+}
+
+.rows__title_item.windDirection {
+  height: 60px;
+}
+
+.rows__title_item.windSpeed {
+  height: 50px;
+}
+
+.rows__title_item.pressure {
+  height: 100px;
+}
+
+
+/***************** ROWS VALUES *****************/
+section.rows__value{    
+  position: relative;
+}
+
+section.rows__value:hover .btn {
+  visibility: visible;  
+  opacity: 1;
+}
+
+.fog_effect{  
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0px, rgb(255, 255, 255) 100%);
+  right: 0;
+  height: 100%;
+  width: 60px;
+  position: absolute;
+}
+
+.btn {
+  top:50%;
+  height: 60px;
+  width: 30px;
+  position: absolute;
+  background: rgba(0,0,0,0.1);    
+  visibility: hidden;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  opacity: 0;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background: rgba(0,0,0,0.2);    
+}
+
+.btn.btn__prev{  
+  border-radius: 0 60px 60px 0;   
+}
+
+.btn.btn__next {  
+  right: 0;
+  border-radius: 60px 0 0 60px;
+}
+
+.btn__triangle-left{
+  height: 0; 
+  width: 0;   
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;   
+  border-right:13px solid white; 
+  transform: translateY(140%) translateX(40%);  
+}
+
+.btn__triangle-right {
+  height: 0; 
+  width: 0;   
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;   
+  border-left:13px solid white; 
+  transform: translateY(140%) translateX(80%);  
+}
+
+.rows__value__list {
+  width: 700px;  
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;    
+}
+
+.rows__value__item {
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;    
+  color: #1e1e1e;  
+  cursor: grab;
+}
+
+.rows__value__item .day {
+  height: 15px;
+  width: 60px;
+  margin-left: 5px;
+  color: #888;  
+  font-size: 11px;  
+  text-transform: uppercase;
+}
+
+.rows__value__item .hour {
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;  
+  border-right: 1px solid #eee;
+}
+
+.rows__value__item .forecast {
+  height: 35px;
+  border-right: 1px solid #eee;
+}
+
+.rows__value__item .forecast img {
+  height: 100%;
+  width: 100%;  
+}
+.rows__value__item .temperature {
+  height: 110px;
+  border-right: 1px solid #eee;
+}
+
+.rows__value__item .temperature svg {
+  margin-top: 15px;
+}
+
+.rows__value__item .temperature svg .chartDot {
+  fill: white;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+.rows__value__item .rainfall {
+  height: 60px;
+  border-right: 1px solid #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.rows__value__item .rainfall p {
+  align-self: center;  
+  color: black;
+  font-size: 12px;
+}
+
+.rows__value__item .rainfall div.water {
+  height: 10px;
+  width: 100%;  
+  background-color: #33ccff;
+}
+
+.rows__value__item .windDirection {
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;
+  border-right: 1px solid white;
+}
+
+.rows__value__item .windDirection img {
+  height: 60%;
+  width: 60%;
+  transform: rotate(340deg);  
+}
+
+.rows__value__item .windDirection p {
+  font-size: 10px;
+}
+
+.rows__value__item .windSpeed {
+  height: 50px;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ebebeb;  
+  color: #1e1e1e;
+  border-right: 1px solid white;
+}
+
+.rows__value__item .windSpeed p.wind_strength_text {
+  margin-bottom: 2px;
+  font-size: 10px;  
+}
+
+.rows__value__item .windSpeed p.wind_strength_speed {
+  font-size: 12px;
+}
+
+.rows__value__item .pressure {
+  height: 100px;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.rows__value__item .pressure svg {
+  margin-top: 15px;
+}
+
+.rows__value__item .pressure svg .chartValue {
+  font-size: 11px;
+}
+
+.rows__value__item .pressure svg .chartDot {
+  fill: white;
+  stroke: black;
+  stroke-width: 1px;
+}
+
+
+/***************** SCROLL BAR *****************/
+::-webkit-scrollbar-thumb {  
+  height: 2px;
+  width: 2px;
+  background: black(255,0,0,0.8); 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;  
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.7);   
+}
+
+::-webkit-scrollbar {  
+  height: 2px;
+  width: 2px;
+  border: 1px solid #d5d5d5;
+}

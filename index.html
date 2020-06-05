@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Widget</title>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+    <link href="main.css" rel="stylesheet">
+    <!-- Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a> -->
+</head>
+
+<body>
+    <div class="container">
+        <section class="rows__title">
+            <ul class="rows__title__list">
+                <li class="rows__title_item day"><span>Dzień</span></li>
+                <li class="rows__title_item hour"><span>Godzina</span></li>
+                <li class="rows__title_item forecast"><span>Prognoza</span></li>
+                <li class="rows__title_item temperature"><span>Temperatura</span></li>
+                <li class="rows__title_item rainfall"><span>Opady</span></li>
+                <li class="rows__title_item windDirection"><span>Kierunek wiatru</span></li>
+                <li class="rows__title_item windSpeed"><span>Prędkość wiatru</span></li>
+                <li class="rows__title_item pressure"><span>Ciśnienie</span></li>
+            </ul>
+        </section>
+        <section class="rows__value">
+            <div class="fog_effect"></div>
+            <div class="btn btn__prev">
+                <div class="btn__triangle-left"></div>
+            </div>
+            <div class="btn btn__next">
+                <div class="btn__triangle-right"></div>
+            </div>
+            <ul class="rows__value__list">
+                <li class="rows__value__item">
+                    <div class="day"></div>
+                    <div class="hour"><span>11:00</span></div>
+                    <div class="forecast">
+                        <img src='icons/cloud_sun.svg' alt="cloud with sun" />
+                    </div>
+                    <div class="temperature">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="chart"
+                            width="2880" height="100" viewBox="0 0 2880 100">
+                            <path class=" chartPath" stroke-width="2" stroke="yellow" fill="none" stroke-linecap="round"
+                                d="M30, 30 90, 35.45454545454545 150, 40.90909090909091 210, 46.36363636363636 270, 
+                             51.81818181818182 330, 57.27272727272727 390, 68.18181818181819 450, 73.63636363636364 510, 
+                             79.0909090909091 570, 84.54545454545455 630, 84.54545454545455 690, 84.54545454545455 750, 84.54545454545455
+                              810, 84.54545454545455 870, 84.54545454545455 930, 90 990, 84.54545454545455 1050, 73.63636363636364 1110, 68.18181818181819 1170, 62.72727272727273 1230, 57.27272727272727 1290, 
+                              51.81818181818182 1350, 51.81818181818182 1410, 46.36363636363636 1470, 46.36363636363636 1530, 40.90909090909091 1590, 40.90909090909091 1650, 46.36363636363636 1710, 46.36363636363636 1770, 57.27272727272727 1830, 62.72727272727273 1890, 73.63636363636364 1950, 79.0909090909091 2010, 79.0909090909091 2070, 84.54545454545455 2130, 84.54545454545455 2190, 90 2250, 90 2310, 90 2370, 84.54545454545455 2430, 73.63636363636364 2490, 68.18181818181819 2550, 57.27272727272727 2610, 51.81818181818182 2670, 46.36363636363636 2730, 40.90909090909091 2790, 40.90909090909091 2850, 40.90909090909091 ">
+                            </path><text class="chartValue" text-anchor="middle" x="30" y="20">&nbsp;19°</text>
+                            <circle class="chartDot" cx="30" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="90" y="25.454545454545453">&nbsp;18°</text>
+                            <circle class="chartDot" cx="90" cy="35.45454545454545" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="150" y="30.909090909090907">&nbsp;17°</text>
+                            <circle class="chartDot" cx="150" cy="40.90909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="210" y="36.36363636363636">&nbsp;16°</text>
+                            <circle class="chartDot" cx="210" cy="46.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="270" y="41.81818181818182">&nbsp;15°</text>
+                            <circle class="chartDot" cx="270" cy="51.81818181818182" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="330" y="47.27272727272727">&nbsp;14°</text>
+                            <circle class="chartDot" cx="330" cy="57.27272727272727" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="390" y="58.18181818181819">&nbsp;12°</text>
+                            <circle class="chartDot" cx="390" cy="68.18181818181819" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="450" y="63.63636363636364">&nbsp;11°</text>
+                            <circle class="chartDot" cx="450" cy="73.63636363636364" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="510" y="69.0909090909091">&nbsp;10°</text>
+                            <circle class="chartDot" cx="510" cy="79.0909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="570" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="570" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="630" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="630" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="690" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="690" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="750" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="750" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="810" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="810" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="870" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="870" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="930" y="80">&nbsp;8°</text>
+                            <circle class="chartDot" cx="930" cy="90" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="990" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="990" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1050" y="63.63636363636364">&nbsp;11°</text>
+                            <circle class="chartDot" cx="1050" cy="73.63636363636364" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1110" y="58.18181818181819">&nbsp;12°</text>
+                            <circle class="chartDot" cx="1110" cy="68.18181818181819" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1170" y="52.72727272727273">&nbsp;13°</text>
+                            <circle class="chartDot" cx="1170" cy="62.72727272727273" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1230" y="47.27272727272727">&nbsp;14°</text>
+                            <circle class="chartDot" cx="1230" cy="57.27272727272727" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1290" y="41.81818181818182">&nbsp;15°</text>
+                            <circle class="chartDot" cx="1290" cy="51.81818181818182" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1350" y="41.81818181818182">&nbsp;15°</text>
+                            <circle class="chartDot" cx="1350" cy="51.81818181818182" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1410" y="36.36363636363636">&nbsp;16°</text>
+                            <circle class="chartDot" cx="1410" cy="46.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1470" y="36.36363636363636">&nbsp;16°</text>
+                            <circle class="chartDot" cx="1470" cy="46.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1530" y="30.909090909090907">&nbsp;17°</text>
+                            <circle class="chartDot" cx="1530" cy="40.90909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1590" y="30.909090909090907">&nbsp;17°</text>
+                            <circle class="chartDot" cx="1590" cy="40.90909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1650" y="36.36363636363636">&nbsp;16°</text>
+                            <circle class="chartDot" cx="1650" cy="46.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1710" y="36.36363636363636">&nbsp;16°</text>
+                            <circle class="chartDot" cx="1710" cy="46.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1770" y="47.27272727272727">&nbsp;14°</text>
+                            <circle class="chartDot" cx="1770" cy="57.27272727272727" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1830" y="52.72727272727273">&nbsp;13°</text>
+                            <circle class="chartDot" cx="1830" cy="62.72727272727273" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1890" y="63.63636363636364">&nbsp;11°</text>
+                            <circle class="chartDot" cx="1890" cy="73.63636363636364" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1950" y="69.0909090909091">&nbsp;10°</text>
+                            <circle class="chartDot" cx="1950" cy="79.0909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2010" y="69.0909090909091">&nbsp;10°</text>
+                            <circle class="chartDot" cx="2010" cy="79.0909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2070" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="2070" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2130" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="2130" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2190" y="80">&nbsp;8°</text>
+                            <circle class="chartDot" cx="2190" cy="90" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="2250" y="80">&nbsp;8°</text>
+                            <circle class="chartDot" cx="2250" cy="90" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="2310" y="80">&nbsp;8°</text>
+                            <circle class="chartDot" cx="2310" cy="90" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="2370" y="74.54545454545455">&nbsp;9°</text>
+                            <circle class="chartDot" cx="2370" cy="84.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2430" y="63.63636363636364">&nbsp;11°</text>
+                            <circle class="chartDot" cx="2430" cy="73.63636363636364" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2490" y="58.18181818181819">&nbsp;12°</text>
+                            <circle class="chartDot" cx="2490" cy="68.18181818181819" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2550" y="47.27272727272727">&nbsp;14°</text>
+                            <circle class="chartDot" cx="2550" cy="57.27272727272727" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2610" y="41.81818181818182">&nbsp;15°</text>
+                            <circle class="chartDot" cx="2610" cy="51.81818181818182" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2670" y="36.36363636363636">&nbsp;16°</text>
+                            <circle class="chartDot" cx="2670" cy="46.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2730" y="30.909090909090907">&nbsp;17°</text>
+                            <circle class="chartDot" cx="2730" cy="40.90909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2790" y="30.909090909090907">&nbsp;17°</text>
+                            <circle class="chartDot" cx="2790" cy="40.90909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2850" y="30.909090909090907">&nbsp;17°</text>
+                            <circle class="chartDot" cx="2850" cy="40.90909090909091" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="rainfall"></div>
+                    <div class="windDirection">
+                        <img src='icons/wind_arrow.svg' alet="wind arrow" />
+                        <p>Pn.-Zach.</p>
+                    </div>
+                    <div class="windSpeed">
+                        <p class="wind_strength_text">Słaby</p>
+                        <p class="wind_strength_speed">7 km/h</p>
+                    </div>
+                    <div class="pressure">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="chart"
+                            width="2880" height="80" viewBox="0 0 2880 80" "=""><path class=" chartPath"
+                            stroke-width="2" stroke="#000" fill="none" stroke-linecap="round"
+                            d="M30, 30 90, 33.63636363636364 150, 33.63636363636364 210, 30 270, 30 330, 30 390, 30 450, 30 510, 30 570, 30 630, 30 690, 33.63636363636364 750, 33.63636363636364 810, 37.27272727272727 870, 37.27272727272727 930, 37.27272727272727 990, 37.27272727272727 1050, 37.27272727272727 1110, 40.90909090909091 1170, 40.90909090909091 1230, 40.90909090909091 1290, 44.54545454545455 1350, 44.54545454545455 1410, 48.18181818181819 1470, 48.18181818181819 1530, 51.81818181818182 1590, 51.81818181818182 1650, 55.45454545454545 1710, 55.45454545454545 1770, 55.45454545454545 1830, 55.45454545454545 1890, 55.45454545454545 1950, 59.09090909090909 2010, 59.09090909090909 2070, 59.09090909090909 2130, 62.72727272727273 2190, 62.72727272727273 2250, 62.72727272727273 2310, 62.72727272727273 2370, 66.36363636363636 2430, 66.36363636363636 2490, 66.36363636363636 2550, 66.36363636363636 2610, 70 2670, 70 2730, 70 2790, 70 2850, 70 ">
+                            </path><text class="chartValue" text-anchor="middle" x="30" y="20">1018 hPa</text>
+                            <circle class="chartDot" cx="30" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="90" y="23.63636363636364">1017 hPa</text>
+                            <circle class="chartDot" cx="90" cy="33.63636363636364" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="150" y="23.63636363636364">1017 hPa</text>
+                            <circle class="chartDot" cx="150" cy="33.63636363636364" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="210" y="20">1018 hPa</text>
+                            <circle class="chartDot" cx="210" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="270" y="20">1018 hPa</text>
+                            <circle class="chartDot" cx="270" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="330" y="20">1018 hPa</text>
+                            <circle class="chartDot" cx="330" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="390" y="20">1018 hPa</text>
+                            <circle class="chartDot" cx="390" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="450" y="20">1018 hPa</text>
+                            <circle class="chartDot" cx="450" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="510" y="20">1018 hPa</text>
+                            <circle class="chartDot" cx="510" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="570" y="20">1018 hPa</text>
+                            <circle class="chartDot" cx="570" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="630" y="20">1018 hPa</text>
+                            <circle class="chartDot" cx="630" cy="30" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="690" y="23.63636363636364">1017 hPa</text>
+                            <circle class="chartDot" cx="690" cy="33.63636363636364" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="750" y="23.63636363636364">1017 hPa</text>
+                            <circle class="chartDot" cx="750" cy="33.63636363636364" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="810" y="27.272727272727273">1016 hPa</text>
+                            <circle class="chartDot" cx="810" cy="37.27272727272727" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="870" y="27.272727272727273">1016 hPa</text>
+                            <circle class="chartDot" cx="870" cy="37.27272727272727" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="930" y="27.272727272727273">1016 hPa</text>
+                            <circle class="chartDot" cx="930" cy="37.27272727272727" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="990" y="27.272727272727273">1016 hPa</text>
+                            <circle class="chartDot" cx="990" cy="37.27272727272727" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1050" y="27.272727272727273">1016 hPa</text>
+                            <circle class="chartDot" cx="1050" cy="37.27272727272727" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1110" y="30.909090909090907">1015 hPa</text>
+                            <circle class="chartDot" cx="1110" cy="40.90909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1170" y="30.909090909090907">1015 hPa</text>
+                            <circle class="chartDot" cx="1170" cy="40.90909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1230" y="30.909090909090907">1015 hPa</text>
+                            <circle class="chartDot" cx="1230" cy="40.90909090909091" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1290" y="34.54545454545455">1014 hPa</text>
+                            <circle class="chartDot" cx="1290" cy="44.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1350" y="34.54545454545455">1014 hPa</text>
+                            <circle class="chartDot" cx="1350" cy="44.54545454545455" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1410" y="38.18181818181819">1013 hPa</text>
+                            <circle class="chartDot" cx="1410" cy="48.18181818181819" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1470" y="38.18181818181819">1013 hPa</text>
+                            <circle class="chartDot" cx="1470" cy="48.18181818181819" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1530" y="41.81818181818182">1012 hPa</text>
+                            <circle class="chartDot" cx="1530" cy="51.81818181818182" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1590" y="41.81818181818182">1012 hPa</text>
+                            <circle class="chartDot" cx="1590" cy="51.81818181818182" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1650" y="45.45454545454545">1011 hPa</text>
+                            <circle class="chartDot" cx="1650" cy="55.45454545454545" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1710" y="45.45454545454545">1011 hPa</text>
+                            <circle class="chartDot" cx="1710" cy="55.45454545454545" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1770" y="45.45454545454545">1011 hPa</text>
+                            <circle class="chartDot" cx="1770" cy="55.45454545454545" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1830" y="45.45454545454545">1011 hPa</text>
+                            <circle class="chartDot" cx="1830" cy="55.45454545454545" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1890" y="45.45454545454545">1011 hPa</text>
+                            <circle class="chartDot" cx="1890" cy="55.45454545454545" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="1950" y="49.09090909090909">1010 hPa</text>
+                            <circle class="chartDot" cx="1950" cy="59.09090909090909" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2010" y="49.09090909090909">1010 hPa</text>
+                            <circle class="chartDot" cx="2010" cy="59.09090909090909" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2070" y="49.09090909090909">1010 hPa</text>
+                            <circle class="chartDot" cx="2070" cy="59.09090909090909" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2130" y="52.72727272727273">1009 hPa</text>
+                            <circle class="chartDot" cx="2130" cy="62.72727272727273" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2190" y="52.72727272727273">1009 hPa</text>
+                            <circle class="chartDot" cx="2190" cy="62.72727272727273" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2250" y="52.72727272727273">1009 hPa</text>
+                            <circle class="chartDot" cx="2250" cy="62.72727272727273" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2310" y="52.72727272727273">1009 hPa</text>
+                            <circle class="chartDot" cx="2310" cy="62.72727272727273" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2370" y="56.36363636363636">1008 hPa</text>
+                            <circle class="chartDot" cx="2370" cy="66.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2430" y="56.36363636363636">1008 hPa</text>
+                            <circle class="chartDot" cx="2430" cy="66.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2490" y="56.36363636363636">1008 hPa</text>
+                            <circle class="chartDot" cx="2490" cy="66.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2550" y="56.36363636363636">1008 hPa</text>
+                            <circle class="chartDot" cx="2550" cy="66.36363636363636" r="4"></circle><text
+                                class="chartValue" text-anchor="middle" x="2610" y="60">1007 hPa</text>
+                            <circle class="chartDot" cx="2610" cy="70" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="2670" y="60">1007 hPa</text>
+                            <circle class="chartDot" cx="2670" cy="70" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="2730" y="60">1007 hPa</text>
+                            <circle class="chartDot" cx="2730" cy="70" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="2790" y="60">1007 hPa</text>
+                            <circle class="chartDot" cx="2790" cy="70" r="4"></circle><text class="chartValue"
+                                text-anchor="middle" x="2850" y="60">1007 hPa</text>
+                            <circle class="chartDot" cx="2850" cy="70" r="4"></circle>
+                        </svg>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
